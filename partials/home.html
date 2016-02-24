@@ -1,0 +1,31 @@
+<h1 class="page-header">Gestion de projets</h1>
+<div class="row">
+	<div class="col-sm-4">
+		<div class="panel panel-default">
+			<div class="panel-heading">Projets actifs</div>
+			<div class="panel-body">
+				<ul class="projects">
+					<li ng-repeat="project in projects | filter:isActiveProject | orderBy:'name'">
+						<a href="#/project/{{project.id}}">{{project.name}}</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-4">
+		<div class="panel panel-default">
+			<div class="panel-heading">Etapes à venir</div>
+			<div class="panel-body">
+				En préparation
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-4">
+		<div class="panel panel-default">
+			<div class="panel-heading">Tâches à compléter</div>
+			<div class="panel-body">
+				En préparation
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,33 @@
+<h1 class="page-header text-center">Gestion de projets</h1>
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<div class="panel panel-primary">
+			<div class="panel-heading">Connexion</div>
+			<div class="panel-body">
+				<form role="form" novalidate name="form" ng-submit="login()">
+					<div ng-show="message !== false" class="alert alert-danger">{{message}}</div>
+					<div class="form-group" ng-class="{ 'has-error' : form.username.$dirty && form.username.$error.required }">
+						<label for="username">Nom d'utilisateur</label>
+						<input id="username" name="username" class="form-control" type="text" ng-model="username" required/>
+						<span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Veuillez saisir votre nom d'utilisateur</span>
+					</div>
+					<div class="form-group" ng-class="{ 'has-error' : form.password.$dirty && form.password.$error.required }">
+						<label for="password">Mot de passe</label>
+						<input id="password" name="password" class="form-control" type="password" ng-model="password" required/>
+						<span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Veuillez indiquer votre mot de passe</span>
+					</div>
+					<div class="form-actions">
+						<a href="#/register" class="btn btn-link">Créer un compte</a>
+						<!-- |
+						<a href="#/password" class="btn btn-link">Mot de passe oublié</a> -->
+						
+						
+						<button type="submit" ng-disabled="form.$invalid" class="btn btn-primary pull-right">Connexion</button>
+						<!-- <a href="#/register" class="btn btn-link">Mot de passe oublié</a> -->
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- <a href="http://jasonwatmore.com/post/2015/03/10/AngularJS-User-Registration-and-Login-Example.aspx#logincontroller">login example</a> -->

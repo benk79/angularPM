@@ -1,0 +1,53 @@
+<div class="page-header">
+<h1>{{project.name}}
+<span class=" pull-right">
+ <a href="#/projectEdit/{{project.id}}" class="btn btn-primary" ng-if="project.completed_on=='0000-00-00 00:00:00'">Editer</a>
+ <button ng-click="archive()" class="btn btn-warning" ng-if="project.completed_on=='0000-00-00 00:00:00'">Archiver</button>
+ <button ng-click="activate()" class="btn btn-warning" ng-if="project.completed_on !== '0000-00-00 00:00:00'">Activer</button>
+ <button ng-click="deleteProject()" class="btn btn-danger">Supprimer</button>
+ <!-- <a href="#/projectEdit/{{project.id}}" class="btn btn-danger">Supprimer</a> -->
+</span>
+</h1>
+<pre ng-if="project.description">{{project.description}}</pre>
+
+</div>
+<div class="row">
+	<div class="col-sm-8">
+		<div class="panel panel-default">
+			<div class="panel-heading">Etapes</div>
+			<div class="panel-body">
+				<div class="form-actions">
+					<button ng-click="comingSoon()" class="btn btn-primary">Ajouter</button>
+				</div>
+			</div>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading">Listes de tâches à planifier</div>
+			<div class="panel-body">
+				
+				<div class="form-actions">
+					<button ng-click="comingSoon()" class="btn btn-primary">Ajouter</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-4" ng-bind-html="progress"></div>
+</div>
+<script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Coming soon</h3>
+        </div>
+        <div class="modal-body">
+			Coming soon feature
+            <!-- <ul>
+                <li ng-repeat="item in items">
+                    <a href="#" ng-click="$event.preventDefault(); selected.item = item">{{ item }}</a>
+                </li>
+            </ul>
+            Selected: <b>{{ selected.item }}</b> -->
+        </div>
+        <div class="modal-footer">
+           <!--  <button class="btn btn-primary" type="button" ng-click="ok()">OK</button> -->
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </script><!--  -->
