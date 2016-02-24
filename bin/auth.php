@@ -1,7 +1,5 @@
 <?php
-$link = mysqli_connect('localhost', 'user', 'password', 'database');
-mysqli_set_charset($link,'utf8');
-
+include('db.php');
 $input = json_decode(file_get_contents('php://input'),true);
 // echo $input;
 ini_set("session.cookie_path", "/project");
